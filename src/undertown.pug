@@ -1,0 +1,172 @@
+extends _layout
+block var
+  - metas = {}
+  - metas.title = '地下街開発'
+  - page = 'undertown'
+block append meta
+  +meta(metas)
+block append header
+  +header(page)  
+block main
+    h1.mb-4 地下街開発ルール
+    p.text-danger ※地下街開発ルールは虎猫の穴独自のものです。
+    ul
+        li 本キャンペーンでは地下街を開発し、PCに有利な効果を得ることが出来ます。
+        li 開発には「天神開発ポイント」を使用します。
+        li 天神開発ポイントは、セッションの報酬によって増減します。単位は「天」
+        li それぞれの施設に設定された天数を消費することで施設を建設でき、さらに決められた天数を消費することで施設をレベルアップすることができます。
+        li 施設の開発内容についての最終決定権は虎猫が持ちます。
+    
+    h3 拡張できる施設と効果、消費天数
+    .card-rule
+        .card-rule__box
+            h4 温泉
+            div.row
+                dl.col
+                    dt 消費天数
+                    dd 30天/LV
+                dl.col
+                    dt LV上限
+                    dd 5LV
+            dl
+                dt 効果
+                dd PCのHPが[Lv×5]点上昇する
+        .card-rule__box
+            h4 カフェ
+            div.row
+                dl.col
+                    dt 消費天数
+                    dd 30天/LV
+                dl.col
+                    dt LV上限
+                    dd 5LV
+            dl
+                dt 効果
+                dd PCのMPが[Lv×3]点上昇する
+        .card-rule__box
+            h4 クラフト研究所
+            div.row
+                dl.col
+                    dt 消費天数
+                    dd 40天/LV
+                dl.col
+                    dt LV上限
+                    dd 5LV
+            dl
+                dt 効果
+                dd PCのクラフト攻撃のダメージが[Lv×3]点上昇する
+        .card-rule__box
+            h4 ブティック
+            div.row
+                dl.col
+                    dt 消費天数
+                    dd 70天/LV
+                dl.col
+                    dt LV上限
+                    dd 3LV
+            dl
+                dt 効果
+                dd PCの<物>属性の防御修正が[Lv+1]点上昇する
+        .card-rule__box
+            h4 アクセサリショップ
+            div.row
+                dl.col
+                    dt 消費天数
+                    dd 70天/LV
+                dl.col
+                    dt LV上限
+                    dd 3LV
+            dl
+                dt 効果
+                dd PCの<物>と<絶>属性以外の防御修正が[Lv+1]点上昇する
+        .card-rule__box
+            h4 エステサロン
+            div.row
+                dl.col
+                    dt 消費天数
+                    dd 100天/LV
+                dl.col
+                    dt LV上限
+                    dd 1LV       
+            dl
+                dt 効果
+                dd PCの特技の代償で支払うMPを1点軽減する（最低値1）
+        .card-rule__box
+            h4 占いの館
+            div.row
+                dl.col
+                    dt 消費天数
+                    dd 0→1：20天、以降：40天
+                dl.col
+                    dt LV上限
+                    dd 3LV 
+            dl
+                dt 効果
+                dd ミドルフェイズに行った判定を振りなおすことができる。各アサルトチーム毎にシナリオ中[Lv]回。1度の判定には1回までしか使用できない。
+        .card-rule__box
+            h4 書店
+            div.row
+                dl.col
+                    dt 消費天数
+                    dd 0→1：20天、以降：40天
+                dl.col
+                    dt LV上限
+                    dd 3LV 
+            dl
+                dt 効果
+                dd ミドルフェイズに判定を行う前に、その判定にダイスボーナスを+1することができる。各アサルトチーム毎にシナリオ中[Lv]回。1度の判定には1回までしか使用できない。
+        .card-rule__box
+            h4 通りもん屋
+            div.row
+                dl.col
+                    dt 消費天数
+                    dd 0→1：20天、以降：30天
+                dl.col
+                    dt LV上限
+                    dd 3LV 
+            dl
+                dt 効果
+                dd シナリオ開始時にすべてのPCは《メディジェクト》相当の通りもんを1つ入手する。このアイテムは他人に渡すことはできず、シナリオ終了時に消滅する。施設レベルが3になると、効果が《ハイメディジェクト》相当になる。
+        .card-rule__box
+            h4 梅ヶ枝餅屋
+            div.row
+                dl.col
+                    dt 消費天数
+                    dd 0→1：20天、以降：30天
+                dl.col
+                    dt LV上限
+                    dd 3LV 
+            dl
+                dt 効果
+                dd シナリオ開始時にすべてのPCは《マインドリーバー》相当の梅ヶ枝餅を1つ入手する。このアイテムは他人に渡すことはできず、シナリオ終了時に消滅する。施設レベルが3になると、効果が《ハイマインドリーバー》相当になる。
+        .card-rule__box
+            h4 ドラッグストア
+            div.row
+                dl.col
+                    dt 消費天数
+                    dd 50天/LV
+                dl.col
+                    dt LV上限
+                    dd 1LV 
+            dl
+                dt 効果
+                dd いつでも使用できる。PC1人の戦闘不能を回復し、HPを1にする。各アサルトチーム毎にシナリオ中1回使用可能
+        .card-rule__box
+            h4 天満宮
+            div.row
+                dl.col
+                    dt 消費天数
+                    dd 40天/LV
+                dl.col
+                    dt LV上限
+                    dd 5LV 
+            dl
+                dt 効果
+                dd いつでも使用できる。アサルトチーム全員のMPを[Lv×4]点回復する。各アサルトチーム毎にシナリオ中1回使用可能
+    h2 第1回テンジン・シェルター開発内容
+    ul 
+        li 天神開発ポイント総計：200天
+            ul
+                li 温泉3Lv・・・PC全員のHP+15
+                li エステサロン1Lv・・・PCの特技の代償で支払うMPを-1
+        li 残り天神開発ポイント・・・10天
